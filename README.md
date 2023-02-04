@@ -14,7 +14,7 @@ This is a solution to the [Ping coming soon page challenge on Frontend Mentor](h
 ### Links
 
 - Live Site URL: [Netlify](https://5leepy-ping-coming-soon-page.netlify.app/)
-- Repository URL: [GitHub](https://5leepy-ping-coming-soon-page.netlify.app/)
+- Repository URL: [GitHub](https://github.com/5leepy/ping-coming-soon-page/)
 
 ### Built with
 
