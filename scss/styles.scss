@@ -1,0 +1,188 @@
+@use "globals" as *;
+:root {
+    --primary:hsl(223, 87%, 63%);
+    --accent:hsl(223, 100%, 88%);
+    --danger:hsl(354, 100%, 66%);
+    --gray:hsl(0, 0%, 59%);
+    --dark: hsl(209, 33%, 12%);
+
+}
+$container-max-widths: (
+        sm: 586px,
+        md: 586px,
+        lg: 661px,
+        xl: 661px
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    font-family: "Libre Franklin", sans-serif;
+}
+.container {
+    margin-top: calc((100vw - 750px) * (85 - 170) / (1440 - 750) + 170px);
+    text-align: center;
+}
+.logo {
+    width: calc((100vw - 750px) * (86 - 106) / (1440 - 750) + 106px);
+    min-width: 85px;
+    max-width: 107px;
+    margin: auto;
+    margin-bottom: calc((100vw - 750px) * (50 - 85) / (1440 - 750) + 85px);
+}
+
+h1 {
+    font-size: calc((100vw - 750px) * (46 - 40) / (1440 - 750) + 40px);
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: calc((100vw - 750px) * (18 - 36) / (1440 - 750) + 36px);
+    letter-spacing: 2px;
+    strong {
+        font-weight: 700;
+        color: var(--dark);
+    }
+}
+
+h2 {
+    font-size: calc((100vw - 750px) * (20 - 24) / (1440 - 750) + 24px);
+    color: var(--dark);
+    margin-bottom: calc((100vw - 750px) * (41 - 65) / (1440 - 750) + 65px);
+}
+
+form {
+    input {
+        width: 100%;
+        border: var(--accent) solid 2px;
+        border-radius: rem(40px);
+        padding: rem(27px) rem(66px);
+        outline: none;
+        &:focus {
+            border:var(--primary) solid 2px;
+        }
+        &::placeholder {
+            font-size: calc((100vw - 750px) * (20 - 24) / (1440 - 750) + 24px);
+            color: var(--accent);
+            line-height: 1;
+          }
+    }
+    p {
+        font-size: rem(20px);
+        font-weight: 300;
+        font-style: italic;
+        color: var(--danger);
+        margin-top: rem(10px);
+        letter-spacing: .4px;
+        margin-bottom: rem(23px);
+        width: 100%;
+        display: none;
+    }
+    .btn {
+        width: 100%;
+        font-weight: 600;
+        border: var(--primary) solid 2px;
+        border-radius: rem(40px);
+        font-size: calc((100vw - 750px) * (20 - 24) / (1440 - 750) + 24px);
+        color: white;
+        background-color: var(--primary);
+        padding: rem(27px) rem(66px);
+        line-height: 1;
+        margin-top: rem(20px);
+        box-shadow: var(--primary) 0 5px 15px -5px;
+        outline: none;
+        &:hover {
+            color: white;
+            background-color: lighten($primary, 20%);
+            border: lighten($primary, 20%) solid 2px;
+          }
+            &:active {
+                color: var(--primary);
+                background-color: white;
+                border: darken($primary, 20%) solid 2px;
+            }
+        &:focus {
+            color: white;
+            background-color: darken($primary, 20%);
+            border: darken($primary, 20%) solid 2px;
+        }
+    }
+}
+
+.hero-img {
+    max-width: rem(637px);
+    margin: auto;
+    margin-top: calc((100vw - 750px) * (84 - 72) / (1440 - 750) + 72px);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(13px);
+    margin-bottom: rem(26px);
+    margin-top: rem(242px);
+    .circle {
+      width: rem(60px);
+      height: rem(60px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      font-size: rem(30px);
+      cursor: pointer;
+      color: var(--primary);
+      transition: 0.2s ease-in-out;
+      
+      &:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+    }
+  }
+  .copyright {
+    width: 100%;
+    font-size: rem(18px);
+    color: var(--gray);
+    margin-bottom: rem(49px);
+    text-align: center;
+  }
+
+@media (min-width: rem(990px)) {
+    .form-input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        input {
+            max-width: rem(420px);
+            padding: rem(14px) rem(30px);
+            order: 1;
+        }
+        .btn {
+            margin: 0;
+            max-width: rem(200px);
+            padding: rem(16px) rem(30px);
+            order: 1;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .error {
+            order: 2;
+            text-align: start;
+            padding-left: rem(30px);
+            font-size: rem(14px);
+        }
+    }
+    .social-icons {
+        margin-top: rem(78px);
+        margin-bottom: rem(26px);
+        .circle {
+            width: rem(31px);
+            height: rem(31px);
+            font-size: rem(14px);
+        }
+      }
+      .copyright {
+        font-size: rem(14px);
+      }
+}
+
